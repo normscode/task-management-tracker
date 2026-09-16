@@ -1,0 +1,47 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tax_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - tax_network
+
+  nginx:
+    image: nginx:alpine
+    container_name: tax_nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app
+    networks:
+      - tax_network
+
+  mysql:
+    image: mysql:8.4
+    container_name: tax_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: tax_manager
+      MYSQL_USER: tax_user
+      MYSQL_PASSWORD: tax_password
+      MYSQL_ROOT_PASSWORD: root_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - tax_network
+
+networks:
+  tax_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
