@@ -30,10 +30,10 @@ services:
     container_name: tax_mysql
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: tax_manager
-      MYSQL_USER: tax_user
-      MYSQL_PASSWORD: tax_password
-      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER:  ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
