@@ -27,12 +27,12 @@ RUN docker-php-ext-install -j$(nproc) \
     intl \
     zip
 
+RUN usermod -u 1000 www-data \
+    && groupmod -g 1000 www-data
+
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www
-
-RUN usermod -u 1000 www-data \
-    && groupmod -g 1000 www-data
 
 EXPOSE 9000
 
