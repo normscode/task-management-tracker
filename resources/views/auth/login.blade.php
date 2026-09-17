@@ -1,4 +1,4 @@
-<!-- @vite(['resources/css/app.css', 'resources/js/app.js'])
+@vite(['resources/css/app.css', 'resources/js/app.js'])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -24,28 +24,41 @@
                 </div>
 
                 <form method="POST" action= "{{ route('login.authenticate') }}">
+                  @csrf
                   <p>Please login to your account</p>
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" name="email" value="{{ old('email') }}" id="form2Example11" class="form-control"
-                      placeholder="Email address" />
+                    <input type="email" name="email" value="{{ old('email') }}" id="form2Example11" class="form-control @error('email') is-invalid @enderror"
+                      placeholder="Email address"/>
                     <label class="form-label" for="form2Example11">Email</label>
                   </div>
+
+                  @if ($errors->has('email'))
+                      <div class="text-danger">
+                          {{ $errors->first('email') }}
+                      </div>
+                  @endif
 
                   <div data-mdb-input-init class="form-outline mb-4">
                     <input type="password" name="password" id="form2Example22" class="form-control" />
                     <label class="form-label" for="form2Example22">Password</label>
                   </div>
 
+                  @if ($errors->has('password'))
+                      <div class="text-danger">
+                          {{ $errors->first('password') }}
+                      </div>
+                  @endif
+
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log
                       in</button>
                     <a class="text-muted" href="#!">Forgot password?</a>
                   </div>
 
                   <div class="d-flex align-items-center justify-content-center pb-4">
                     <p class="mb-0 me-2">Don't have an account?</p>
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-danger">Create new</button>
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-danger">Create new</button>
                   </div>
 
                 </form>
@@ -67,4 +80,4 @@
   </div>
 </section>
     </body>
-</html> -->
+</html>

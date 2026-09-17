@@ -7,4 +7,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user/{id}', [UserController::class, 'show']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::post('/login', [UserController::class, 'authenticate'])->name('login.authenticate');
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth')->name('logout');
+Route::get('/dashboard', [UserController::class, 'dashboard'])->middleware('auth')->name('dashboard');
+
