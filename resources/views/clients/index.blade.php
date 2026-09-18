@@ -44,7 +44,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#"
+                        <a href="{{ route('engagements.index') }}"
                             class="nav-link text-white">
                             Tax Engagements
                         </a>

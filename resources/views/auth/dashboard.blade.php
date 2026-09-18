@@ -32,13 +32,13 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{ url('/clients') }}" class="nav-link text-white">
+                        <a href="{{ route('clients.index') }}" class="nav-link text-white">
                             Clients
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">
+                        <a href="{{ route('engagements.index') }}" class="nav-link text-white">
                             Tax Engagements
                         </a>
                     </li>

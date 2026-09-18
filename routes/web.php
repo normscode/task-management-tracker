@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\EngagementController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -18,6 +19,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
     Route::get('/clients', [ClientController::class, 'page'])->name('clients.index');
+
+    Route::get('/engagements', [EngagementController::class, 'page'])
+        ->name('engagements.index');
+
+    Route::apiResource('engagements', EngagementController::class)
+        ->except(['index']);
 
     Route::apiResource('clients', ClientController::class)
         ->except(['index']);
