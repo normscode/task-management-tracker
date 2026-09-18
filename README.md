@@ -1,58 +1,89 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# TaxTrack
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A web-based tax management system for managing clients and tracking tax engagements.
 
-## About Laravel
+TaxTrack was built as a personal project to strengthen my backend development skills using Laravel and to practice building a business-oriented application with database-driven workflows, RESTful APIs, AJAX interactions, and CRUD operations.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Client Management
+- Create and manage client records
+- Store client contact information
+- Categorize clients by entity type
+- Manage client status
+- Search and filter clients
+- Archive clients using soft deletes
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Tax Engagement Management
+- Create tax engagements for clients
+- Track the type of tax service
+- Assign tax years
+- Set engagement start and due dates
+- Track engagement status
+- Add notes to engagements
+- Search and filter engagements
 
-## Learning Laravel
+### Dashboard
+- View total clients
+- View active clients
+- View open tax engagements
+- Display recently added clients
+- Display upcoming tax engagements
+- Highlight important engagement information
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Authentication
+- User login and logout
+- Session-based authentication
+- Protected application routes
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Backend
+- RESTful API endpoints
+- Request validation
+- Eloquent ORM relationships
+- Database migrations
+- Soft deletes
+- Server-side data handling
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### Frontend
+- Bootstrap-based responsive interface
+- Blade templates
+- AJAX-powered CRUD interactions
+- Bootstrap modals for forms
+- Dynamic table updates without full-page reloads
 
-## Agentic Development
+---
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Tech Stack
 
-```bash
-composer require laravel/boost --dev
+| Technology | Purpose |
+|------------|---------|
+| PHP | Backend programming language |
+| Laravel | Web framework |
+| MySQL | Relational database |
+| Eloquent ORM | Database interaction |
+| Blade | Server-side templating |
+| Bootstrap | UI and responsive design |
+| jQuery | AJAX and frontend interactions |
+| Docker | Development environment |
+| Git | Version control |
 
-php artisan boost:install
-```
+---
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## Application Structure
 
-## Contributing
+The application is organized around the main business entities of a tax management workflow:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```text
+User
+ │
+ └── Authentication
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Client
+ │
+ └── Tax Engagement
+       ├── Service Type
+       ├── Tax Year
+       ├── Start Date
+       ├── Due Date
+       ├── Status
+       └── Notes
