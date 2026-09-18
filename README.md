@@ -2,54 +2,82 @@
 
 A web-based tax management system for managing clients and tracking tax engagements.
 
-TaxTrack was built as a personal project to strengthen my backend development skills using Laravel and to practice building a business-oriented application with database-driven workflows, RESTful APIs, AJAX interactions, and CRUD operations.
+TaxTrack is a personal project built to strengthen my backend development skills using Laravel and to practice building a business-oriented application with database-driven workflows, RESTful APIs, AJAX interactions, and CRUD operations.
 
-## Features
+> **Project Status:** In Development
+
+---
+
+## Overview
+
+TaxTrack is designed to help organize tax-related client information and engagements in one centralized system.
+
+The application is being developed around two main areas:
+
+- Client Management
+- Tax Engagement Management
+
+The Client Management module is currently implemented, while the Tax Engagement Management module is still under development.
+
+---
+
+## Current Features
 
 ### Client Management
-- Create and manage client records
+
+The Client Management module currently supports:
+
+- Create client records
+- View client records
+- Edit client records
+- Archive client records
+- Search clients
+- Filter clients by status
 - Store client contact information
-- Categorize clients by entity type
+- Store client entity type
 - Manage client status
-- Search and filter clients
-- Archive clients using soft deletes
-
-### Tax Engagement Management
-- Create tax engagements for clients
-- Track the type of tax service
-- Assign tax years
-- Set engagement start and due dates
-- Track engagement status
-- Add notes to engagements
-- Search and filter engagements
-
-### Dashboard
-- View total clients
-- View active clients
-- View open tax engagements
-- Display recently added clients
-- Display upcoming tax engagements
-- Highlight important engagement information
+- Soft delete support
 
 ### Authentication
-- User login and logout
+
+- User login
+- User logout
 - Session-based authentication
 - Protected application routes
 
-### Backend
-- RESTful API endpoints
-- Request validation
-- Eloquent ORM relationships
-- Database migrations
-- Soft deletes
-- Server-side data handling
+### Dashboard
 
-### Frontend
-- Bootstrap-based responsive interface
-- Blade templates
-- AJAX-powered CRUD interactions
-- Bootstrap modals for forms
-- Dynamic table updates without full-page reloads
+The dashboard is being developed to provide an overview of:
+
+- Total clients
+- Active clients
+- Tax engagements
+- Recent clients
+- Upcoming engagements
+
+Some dashboard functionality is dependent on the completion of the Tax Engagement module.
+
+---
+
+## In Progress
+
+### Tax Engagement Management
+
+The Tax Engagement module is currently under development.
+
+Planned functionality includes:
+
+- Create tax engagements
+- Associate engagements with clients
+- Track service type
+- Track tax year
+- Set start and due dates
+- Track engagement status
+- Add engagement notes
+- Edit engagements
+- Archive/delete engagements
+- Search and filter engagements
+- Display upcoming engagements on the dashboard
 
 ---
 
@@ -58,32 +86,30 @@ TaxTrack was built as a personal project to strengthen my backend development sk
 | Technology | Purpose |
 |------------|---------|
 | PHP | Backend programming language |
-| Laravel | Web framework |
+| Laravel | Web application framework |
 | MySQL | Relational database |
 | Eloquent ORM | Database interaction |
 | Blade | Server-side templating |
-| Bootstrap | UI and responsive design |
+| Bootstrap | UI framework |
 | jQuery | AJAX and frontend interactions |
 | Docker | Development environment |
 | Git | Version control |
 
 ---
 
-## Application Structure
+## Application Architecture
 
-The application is organized around the main business entities of a tax management workflow:
+The application follows Laravel's MVC architecture.
 
 ```text
-User
- │
- └── Authentication
-
-Client
- │
- └── Tax Engagement
-       ├── Service Type
-       ├── Tax Year
-       ├── Start Date
-       ├── Due Date
-       ├── Status
-       └── Notes
+TaxTrack
+│
+├── Authentication
+│
+├── Client Management
+│   └── Clients
+│
+├── Tax Engagement Management
+│   └── Engagements
+│
+└── Dashboard
