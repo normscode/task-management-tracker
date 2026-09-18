@@ -35,7 +35,7 @@ The Client Management module is currently implemented, while the Tax Engagement 
 
 <img src="screenshots/taxtrack3.png" alt="TaxTrack Add Client" width="900">
 
-### Edit Client
+### Client
 
 <img src="screenshots/taxtrack4.png" alt="TaxTrack Edit Client" width="900">
 
