@@ -21,6 +21,30 @@ The Client Management module is currently implemented, while the Tax Engagement 
 
 ---
 
+## Screenshots
+
+### Dashboard
+
+<img src="screenshots/taxtrack1.png" alt="TaxTrack Dashboard" width="900">
+
+### Client Management
+
+<img src="screenshots/taxtrack2.png" alt="TaxTrack Client Management" width="900">
+
+### Add Client
+
+<img src="screenshots/taxtrack3.png" alt="TaxTrack Add Client" width="900">
+
+### Edit Client
+
+<img src="screenshots/taxtrack4.png" alt="TaxTrack Edit Client" width="900">
+
+### Tax Engagements — In Progress
+
+<img src="screenshots/taxtrack5.png" alt="TaxTrack Tax Engagements" width="900">
+
+---
+
 ## Current Features
 
 ### Client Management
