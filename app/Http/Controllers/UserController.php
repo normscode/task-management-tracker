@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
+use App\Models\Engagement;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -16,13 +18,14 @@ class UserController extends Controller
 
     public function login()
     {
+
         return view('auth.login');
     }
 
-     /**
+    /**
      * Handle an authentication attempt.
      */
-    
+
     public function authenticate(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
@@ -32,11 +35,11 @@ class UserController extends Controller
 
         if (Auth::attempt($credentials, true)) {
             $request->session()->regenerate();
- 
+
             return redirect()->intended(route('dashboard'));
         }
 
-         return back()->withErrors([
+        return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
@@ -54,6 +57,29 @@ class UserController extends Controller
 
     public function dashboard()
     {
-        return view('auth.dashboard');
+        $totalClients = Client::count();
+
+        $totalOpenEngagements = Engagement::where('status', 'Open')->count();
+
+        $upcomingEngagements = Engagement::with('client')
+            ->whereIn('status', ['Open', 'In Progress'])
+            ->whereDate('due_date', '>=', today())
+            ->orderBy('due_date')
+            ->take(3)
+            ->get();
+
+        $activeClients = Client::where('status', 'Active')->count();
+
+        $recentClients = Client::latest()
+            ->take(5)
+            ->get();
+
+        return view('auth.dashboard', compact(
+            'totalClients',
+            'activeClients',
+            'recentClients',
+            'totalOpenEngagements',
+            'upcomingEngagements',
+        ));
     }
 }
