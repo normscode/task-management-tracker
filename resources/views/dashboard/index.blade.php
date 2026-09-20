@@ -199,6 +199,28 @@
             <div class="card-body">
 
                 {{-- Engagement items --}}
+                @forelse ($upcomingEngagements as $engagement)
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <h6 class="mb-1">
+                            {{ $engagement->client->name }}
+                        </h6>
+
+                        <p class="text-muted mb-0">
+                            {{ $engagement->service_type }}
+                            · Due {{ \Carbon\Carbon::parse($engagement->due_date)->format('M d, Y') }}
+                        </p>
+                    </div>
+
+                    <span class="badge text-bg-primary">
+                        {{ $engagement->tax_year }}
+                    </span>
+                </div>
+                @empty
+                <p class="text-muted mb-0">
+                    No upcoming engagements.
+                </p>
+                @endforelse
 
             </div>
 

@@ -6,3 +6,4 @@ window.$ = $;
 window.jQuery = $;
 
 import './clients/client';
+import './engagements/engagement';
