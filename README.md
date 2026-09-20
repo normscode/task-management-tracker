@@ -83,8 +83,6 @@ Some dashboard functionality is dependent on the completion of the Tax Engagemen
 
 ---
 
-## In Progress
-
 ### Tax Engagement Management
 
 The Tax Engagement module is currently under development.
