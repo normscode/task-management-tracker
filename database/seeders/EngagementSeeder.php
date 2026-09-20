@@ -20,7 +20,7 @@ class EngagementSeeder extends Seeder
             'service_type' => 'Tax Preparation',
             'tax_year' => 2025,
             'start_date' => '2026-01-15',
-            'due_date' => '2026-04-15',
+            'due_date' => '2026-09-25',
             'status' => 'Open',
             'notes' => 'Annual tax preparation engagement.',
         ]);
@@ -30,7 +30,7 @@ class EngagementSeeder extends Seeder
             'service_type' => 'Bookkeeping',
             'tax_year' => 2025,
             'start_date' => '2026-01-05',
-            'due_date' => '2026-03-31',
+            'due_date' => '2026-10-15',
             'status' => 'In Progress',
             'notes' => 'Monthly bookkeeping review.',
         ]);
@@ -39,8 +39,8 @@ class EngagementSeeder extends Seeder
             'client_id' => $juan->id,
             'service_type' => 'Tax Consultation',
             'tax_year' => 2025,
-            'start_date' => '2026-02-01',
-            'due_date' => '2026-03-15',
+            'start_date' => '2026-08-15',
+            'due_date' => '2026-09-10',
             'status' => 'Completed',
             'notes' => 'Consultation regarding annual tax filing.',
         ]);
@@ -50,7 +50,7 @@ class EngagementSeeder extends Seeder
             'service_type' => 'Payroll',
             'tax_year' => 2025,
             'start_date' => '2026-01-10',
-            'due_date' => '2026-12-31',
+            'due_date' => '2026-10-05',
             'status' => 'In Progress',
             'notes' => 'Payroll processing and reporting.',
         ]);
@@ -60,7 +60,7 @@ class EngagementSeeder extends Seeder
             'service_type' => 'Tax Preparation',
             'tax_year' => 2025,
             'start_date' => '2026-02-10',
-            'due_date' => '2026-04-15',
+            'due_date' => '2026-11-01',
             'status' => 'Open',
             'notes' => 'Nonprofit annual tax preparation.',
         ]);

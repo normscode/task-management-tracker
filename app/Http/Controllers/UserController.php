@@ -74,7 +74,7 @@ class UserController extends Controller
             ->take(5)
             ->get();
 
-        return view('auth.dashboard', compact(
+        return view('dashboard.index', compact(
             'totalClients',
             'activeClients',
             'recentClients',
